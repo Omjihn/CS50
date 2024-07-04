@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -7,26 +8,39 @@
     </head>
     <link rel="stylesheet" href="style.css">
     <body>
-        <div class="topleft">
-            <a class="textGoogle" href="images.html">Images</a>
+        <div class="headerblockdiv">
+            <div class="headerdiv">
+                <a class="headertext" href="images.html">Images</a>
+            </div>
         </div>
-        <div >
-            <img    class="center" \
-            height="92" \
-            width="272" \
-            src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" >
+        <div class="blockdiv">
+            <div >
+                <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" height="92" width="272"/>
+            </div>
         </div>
-        <div class="mainflexbox">
-            <div class="researchdiv">
-                <div>
-                    <span class="researchspan" style="height:20px;line-height:20px;width:20px" >
-                        <svg focuasble="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-                        </svg>
-                    </span>
+        <div class="searchdiv">
+            <div class="presearch">
+                <div class="searchbar">
+                    <div class="researchlogo" width="20px" height="20">
+                        <img src="https://icones.pro/wp-content/uploads/2021/06/icone-loupe-gris.png" width="20" height="20" />
+                    </div>
+                    <div style="display: flex; flex-direction: row; flex: 1;">
+                        <textarea></textarea>
+                    </div>
+                    <div style="display: flex; flex-direction: row;">
+                        <div class="researchlogo">
+                            <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-25-512.png" width="24px" height="24px" />
+                        </div>
+                        <div class="researchlogo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Google_Lens_Icon.svg" width="24px" height="24px" />
+                        </div>
+                    </div>
                 </div>
             </div>
-            <textarea class="textarea" ></textarea>
+            <div class="buttonarea">
+                <input role="button" value="Google search" style="text-align: center;">
+                <input role="button">
+            </div>
         </div>
     </body>
 </html>
