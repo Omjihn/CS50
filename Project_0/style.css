@@ -24,17 +24,32 @@
     height: 160px;
 }
 
-textarea, textarea:focus{
-    padding: 1px;
+input, input:focus, input:active{
+
     flex: 1;
-    height: auto;
-    width: auto;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
     resize: none;
     border: none;
-    padding-top: 11px;
+    outline: none;
+    text-decoration: none;
     font-size: 14px;
     font-family: arial, sans-serif;
     color: #1f1f1f;
+}
+
+.searchbar:hover{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    height: 44px;
+    width: auto;
+    min-width: 345px;
+    max-width: 584px;
+    box-shadow: 3px 3px 2px lightgray;
 }
 
 .searchbar{
@@ -45,6 +60,7 @@ textarea, textarea:focus{
     border-radius: 24px;
     height: 44px;
     width: auto;
+    min-width: 345px;
     max-width: 584px;
 }
 
@@ -65,6 +81,8 @@ img{
     font-family: arial, sans-serif;
     text-decoration: none;
     text-align: right;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 .headertext:hover {
@@ -87,15 +105,23 @@ img{
     align-items: right;
 }
 
-button{
+button:hover{
     border-radius: 4px;
-    border: none;
+    border-color: lightgray;
+    border-width: 1px;
     background-color: #f8f9fa;
     padding: 16px;
-    margin-top: 11;
-    margin-bottom: 11;
-    margin-left: 4;
-    margin-right: 4;
+    color: #3c4043;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px lightgray;
+}
+
+button{
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    border: none;
+    padding: 16px;
+    color: #3c4043;
 }
 
 .buttonarea{
