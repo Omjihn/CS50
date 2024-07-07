@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Google Advanced Search</title>
+		<link rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAqFBMVEVHcEz7+/v+/v709PX////7+/v09fX4+Pj////8/Pz7+/v////z+PP29vf09PX////+/v7///////////83qlfrQzPsTkFHiPUlpkszf/RAhfX6uwD8wBLW4vyQs/j96N3/+vPh8eR8wJiHrfjylpBhuXftX0rR6Nb608j0qKNwofBKsGWzy/rzn5n0o57uc2/94J78zFb3u7es1rC6z/rHuTCVsC08ooagt3gtAAAAE3RSTlMA08Eb4kVwOqb5kV7jkn8NfnFw9v5R3wAAAVtJREFUOI2dU9lywjAMTIAchgmljU3sJBRycRZoocf//1ltyZ4cpi/dl0jeHWllxY7TxVPgecGT8weCkMQAEgaP6EncwcSShPEAYZ+fDHlZ5BG/P9T1YW8rRnhyYRoXzEeGn0G6XrKlBmNrOJppAVZnmpNftt1gDeSfVbhhwNa3W83Y1hh9aR1eFX/G43N/kjEYyCR/sGcdG4vvWb692jzYnKrgI88znL96RVQrlU3NJWdSgM5FihBv5sKHggSR9gW5FKx1BSGUSHwawQI8ZHl2B8FK4ZgmAjwspMDDKb4obc2nsgIEnrnpzTeltDF8lSbpsb1r2OWdS8Vpp8KiVAWgA+4TesSNFFBOm+bE+U8iqraD47gqJidVQ4NjA1eve4ydS6PgvGw3AfAxL0oOKAvM/fafi4z/YrcrTBx1/9q5vcj54N2QPk3sx+V3JMS3aKgSuUTCjR49zf/jF+G2OgtU1MugAAAAAElFTkSuQmCC">
+	</head>
+	<link rel="stylesheet" href="style.css">
+	<body>
+		<div class="headerblockdiv">
+			<div class="headerdiv">
+				<a class="headertext" href="index.html">Google Search</a>
+			</div>
+		</div>
+		<div style="margin: 25px 35px;">
+			<a style="color: #d93025; font-family: Arial, sans-serif; font-size: 20px;">Advanced Search</a>
+		</div>
+		<div style="border-bottom: 1px solid #ebebeb;"></div>
+		<div style="max-width: 1140px; min-width: 200px;">
+			<form action="https://www.google.com/search" >
+				<div style="margin: 40px 2% 0 45px;">
+					<a style="color: #333; font-size: 16px; font-family: Arial, sans-serif;">Find pages with...</a>
+					<div class="advancedinput">
+						<div style="display: inline-block; min-width: 167px;">
+							<a class="inputtext">all these words:</a>
+						</div>
+						<div style="display: inline-block; min-width: 167px; vertical-align: middle; width: 50%;">
+							<input class="inputentry" autofocus="autofocus" name="as_q" type="text"/>
+						</div>
+					</div>
+					<div class="advancedinput">
+						<div style="display: inline-block; min-width: 167px;">
+							<a class="inputtext">this exact word or phrase:</a>
+						</div>
+						<div style="display: inline-block; min-width: 167px; vertical-align: middle; width: 50%;">
+							<input class="inputentry" name="as_epq" type="text" />
+						</div>
+					</div>
+					<div class="advancedinput">
+						<div style="display: inline-block; min-width: 167px;">
+							<a class="inputtext">any of these words:</a>
+						</div>
+						<div style="display: inline-block; min-width: 167px; vertical-align: middle; width: 50%;">
+							<input class="inputentry" name="as_oq" type="text" />
+						</div>
+					</div>
+					<div class="advancedinput">
+						<div style="display: inline-block; min-width: 167px;">
+							<a class="inputtext">none of these words:</a>
+						</div>
+						<div style="display: inline-block; min-width: 167px; vertical-align: middle; width: 50%;">
+							<input class="inputentry" name="as_eq" type="text" />
+						</div>
+					</div>
+				</div>
+				<div style="margin: 10px 45px;">
+					<button id="advancedbutton">Advanced Search</button>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

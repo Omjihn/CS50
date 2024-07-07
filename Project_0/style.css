@@ -1,135 +1,179 @@
 
 .blockdiv{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    min-height: 92;
-    max-height: 290;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	min-height: 92;
+	max-height: 290;
 }
 
 .presearch{
-    margin: 0 auto;
-    width: auto;
-    max-width: 584px;
-    padding-top: 6px;
-    position: relative;
-    
+	margin: 0 auto;
+	width: auto;
+	max-width: 584px;
+	padding-top: 6px;
+	position: relative;
+	
 }
 
 .searchdiv{
-    padding: 20;
-
-    height: 160px;
+	padding: 20;
+	padding-top: 20px;
+	height: 160px;
 }
 
 input, input:focus, input:active{
 
-    flex: 1;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    resize: none;
-    border: none;
-    outline: none;
-    text-decoration: none;
-    font-size: 14px;
-    font-family: arial, sans-serif;
-    color: #1f1f1f;
+	flex: 1;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	resize: none;
+	border: none;
+	outline: none;
+	text-decoration: none;
+	font-size: 14px;
+	font-family: arial, sans-serif;
+	color: #1f1f1f;
 }
 
 .searchbar:hover{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    border: 1px solid #dfe1e5;
-    border-radius: 24px;
-    height: 44px;
-    width: auto;
-    min-width: 345px;
-    max-width: 584px;
-    box-shadow: 3px 3px 2px lightgray;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	border: 1px solid #dfe1e5;
+	border-radius: 24px;
+	height: 44px;
+	width: auto;
+	min-width: 345px;
+	max-width: 584px;
+	box-shadow: 3px 3px 2px lightgray;
 }
 
 .searchbar{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    border: 1px solid #dfe1e5;
-    border-radius: 24px;
-    height: 44px;
-    width: auto;
-    min-width: 345px;
-    max-width: 584px;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	border: 1px solid #dfe1e5;
+	border-radius: 24px;
+	height: 44px;
+	width: auto;
+	min-width: 345px;
+	max-width: 584px;
 }
 
 .researchlogo{
-    padding-left: 14px;
-    padding-right: 13px;
-    display: flex;
-    align-items: center;
+	padding-left: 14px;
+	padding-right: 13px;
+	display: flex;
+	align-items: center;
+}
+
+.logotext{
+	color: #4285f4;
+	font: 16px / 16px roboto-regular, arial, sans-serif;
+	position: absolute;
+	left: 215px;
+	white-space-collapse: collapse;
+	text-wrap: nowrap;
+	bottom: 0;
 }
 
 img{
-    float: center;
+	float: center;
 }
 
 .headertext, .headertext:visited {
-    color: #1f1f1f;
-    font-size: small;
-    font-family: arial, sans-serif;
-    text-decoration: none;
-    text-align: right;
-    padding-right: 10px;
-    padding-left: 10px;
+	color: #1f1f1f;
+	font-size: small;
+	font-family: arial, sans-serif;
+	text-decoration: none;
+	text-align: right;
+	padding-right: 10px;
+	padding-left: 10px;
 }
 
 .headertext:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 .headerdiv{
-    text-align: right;
-    float: right;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+	text-align: right;
+	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .headerblockdiv{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: right;
-    align-items: right;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: right;
+	align-items: right;
 }
 
-button:hover{
-    border-radius: 4px;
-    border-color: lightgray;
-    border-width: 1px;
-    background-color: #f8f9fa;
-    padding: 16px;
-    color: #3c4043;
-    cursor: pointer;
-    box-shadow: 2px 2px 2px lightgray;
+#searcbutton:hover{
+	border-radius: 4px;
+	border-color: lightgray;
+	border-width: 1px;
+	background-color: #f8f9fa;
+	padding: 16px;
+	color: #3c4043;
+	cursor: pointer;
+	box-shadow: 2px 2px 2px lightgray;
 }
 
-button{
-    border-radius: 4px;
-    background-color: #f8f9fa;
-    border: none;
-    padding: 16px;
-    color: #3c4043;
+#searcbutton{
+	border-radius: 4px;
+	background-color: #f8f9fa;
+	border: none;
+	padding: 16px;
+	color: #3c4043;
 }
 
 .buttonarea{
-    padding-top: 18px;
-    height: 70px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+	padding-top: 18px;
+	height: 70px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.advancedinput{
+	padding: 20px 0px;
+	display: flex;
+	min-width: 337px;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+}
+
+.inputtext{
+	font-family: Arial, sans-serif;
+	font-size: 13px;
+	color: #222;
+}
+
+.inputentry{
+	border: 1px solid #d9d9d9;
+}
+
+.inputentry:focus{
+	border: 1px solid #d9d9d9;
+}
+
+#advancedbutton{
+	color: #fff;
+	background-color: #4d90fe;
+	border: none;
+	height: 30px;
+    min-width: 120px;
+	font-size: 11px;
+	font-weight: bold;
+	
 }
