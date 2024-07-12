@@ -7,7 +7,7 @@ Design: Dactyl keyboards are typically 3D-printed, featuring a concave layout th
 
 Split Keyboard: Dactyl keyboards are split into two halves, allowing users to position each half independently to suit their shoulder width and typing posture. This split design promotes a more natural arm position and reduces tension in the shoulders and wrists.
 
-Customization: Due to their 3D-printed nature, Dactyl keyboards are highly customizable. Enthusiasts can modify key layouts, switch types, and even the curvature of the keyboard to fit their ergonomic needs and personal preferences.
+Customization: Due to their 3D-printed nature, Dactyl keyboards are highly customizable. Enthusiasts can modify key layouts, [switch](../Switch) types, and even the curvature of the keyboard to fit their ergonomic needs and personal preferences.
 
 Typing Experience: The curved key layout of Dactyl keyboards requires some adaptation for new users but can lead to faster and more comfortable typing once accustomed. Keycaps are often angled and positioned to minimize finger travel, optimizing typing efficiency.
 

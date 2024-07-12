@@ -15,7 +15,7 @@ Keyboard cases can also be made from other materials such as aluminum, which off
 
 In addition to material and size, the design of the case can vary:
 
-    High-profile cases: These have taller sides that cover the switches, providing a cleaner look and potentially reducing noise.
-    Low-profile cases: These expose the switches and keycaps more, offering a different aesthetic and slightly reduced weight.
+-   High-profile cases: These have taller sides that cover the [switches](../Switch), providing a cleaner look and potentially reducing noise.
+-   Low-profile cases: These expose the [switches](../Switch) and keycaps more, offering a different aesthetic and slightly reduced weight.
 
 Case customization is a popular aspect of mechanical keyboard hobbyists. Many enjoy painting, adding stickers, or even designing custom cases using 3D printing. The case not only protects the internal components but also contributes significantly to the keyboard’s overall look and feel.
