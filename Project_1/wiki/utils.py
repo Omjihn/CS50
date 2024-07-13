@@ -58,3 +58,18 @@ def get_entry(entry_name):
         content = file.read()
     
     return content
+
+def create_entry(filename, content):
+    """
+    Creates a new encyclopedia entry with the given filename and content.
+    The file will be saved as a .md file.
+    """
+    entries_dir = os.path.join(os.path.dirname(__file__), 'entries')
+    
+    if not default_storage.exists(entries_dir):
+        default_storage.makedirs(entries_dir)
+    
+    filepath = os.path.join(entries_dir, f"{filename}.md")
+    
+    with default_storage.open(filepath, 'w') as file:
+        file.write(content)
