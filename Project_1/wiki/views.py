@@ -99,7 +99,9 @@ def searchIndex(request):
         search_term = request.POST['search'].strip()
         allEntries = list_entries()
         for entry in allEntries:
-            if search_term.lower() in entry.lower():
+            if search_term == entry.lower():
+                return redirect(f"/wiki/{entry}/") 
+            elif search_term.lower() in entry.lower():
                     toReturn.append(entry)
     return render(request, 'wiki/searchIndex.html', {
     'entries': toReturn,
