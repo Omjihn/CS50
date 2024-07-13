@@ -1,5 +1,6 @@
 import re
 import os
+import random
 
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
@@ -15,6 +16,23 @@ def list_entries():
     
     _, filenames = default_storage.listdir(entries_dir)
     return list(sorted(re.sub(r"\.md$", "", filename) for filename in filenames if filename.endswith(".md")))
+
+def get_random_entry():
+    """
+    Returns a random name of an encyclopedia entry.
+    """
+
+    entries_dir = os.path.join(os.path.dirname(__file__), 'entries')
+    
+    if not default_storage.exists(entries_dir):
+        return None
+    
+    _, filenames = default_storage.listdir(entries_dir)
+    entries = [re.sub(r"\.md$", "", filename) for filename in filenames if filename.endswith(".md")]
+    
+    if entries:
+        return random.choice(entries)
+    return None
 
 def modif_file(filename, content):
     """ 
