@@ -19,8 +19,9 @@ def index(request):
     """
 
     entries = list_entries()
-    return render(request, 'wiki/index.html', {
-        'entries': entries
+    return render(request, "wiki/index.html", {
+        'entries': entries,
+        'title' : ""
     })
 
 def page(request, name):
@@ -70,11 +71,9 @@ def newPage(request):
     elif request.method == "POST":
         f = get_entry(request.POST['name'])
         if f != None:
-            print("The file exist")
             return render(request, "wiki/error.html", {
             "message": "Error this topic already exist."
         })
-        print("The file do not exist")
         create_entry(request.POST['name'], request.POST['content'])
         return redirect(f"/wiki/{request.POST['name']}/")
         
@@ -85,7 +84,6 @@ def getRandom(request):
     """
     Redirect to a random entry if exist
     """
-    print("passed")
     entry = get_random_entry()
     if entry != None:
         return redirect(f"/wiki/{entry}/")
@@ -93,7 +91,6 @@ def getRandom(request):
         return redirect("/wiki/")
     
 def searchIndex(request):
-    print("index")
     toReturn = list()
     if request.method == "POST":
         search_term = request.POST['search'].strip()

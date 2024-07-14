@@ -33,9 +33,7 @@
         <div style="padding: 10px;">
             <form  action="./" method="post" >
                 {% csrf_token %}
-                <textarea name="new_content" style="resize: both; width: 80%; height: auto; min-height: 450px;">
-                    {{ content }}
-                </textarea>
+                <textarea name="new_content" style="resize: both; width: 80%; height: auto; min-height: 450px;">{{ content }}</textarea>
                 <div>
                     <input type="submit" value="Modify" ></input>
                     <a href="./">
