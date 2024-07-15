@@ -2,8 +2,8 @@
 {% extends "wiki/wikiTemplate.html" %}
 
 {% block body %}
-<div style="padding: 10px; margin-top: 10px;">
-    <div class="d-flex flex-row-reverse" style="padding: 10px;">
+<div style="padding: 0px 10px; margin-top: 0px;">
+    <div class="d-flex flex-row-reverse" style="padding: 0px 10px;">
         <a href="/wiki/new/">
             <button type="button" class="btn btn-outline-primary" style="margin-left: 5px;">Add new topic</button>
 
@@ -19,7 +19,7 @@
     <div class="list-group">
         {% if entries %}
         {% for entry in entries %}
-            <a href="/wiki/{{ entry }}" class="list-group-item list-group-item-action" style="margin-top: 10px;">{{ entry }}</a>
+            <a href="/wiki/{{ entry }}" class="list-group-item list-group-item-action">{{ entry }}</a>
         {% endfor %}
         {% else %}
         <div class="position-absolute top-50 start-50 translate-middle">

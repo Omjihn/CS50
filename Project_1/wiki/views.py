@@ -20,7 +20,7 @@ def index(request):
 
     entries = list_entries()
     return render(request, "wiki/index.html", {
-        "description": "List of all the indexes:",
+        "description": "List of all the topics:",
         'entries': entries,
         'title' : ""
     })
