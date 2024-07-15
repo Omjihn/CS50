@@ -2,23 +2,30 @@
 {% extends "wiki/wikiTemplate.html" %}
 
 {% block body %}
-<div style="padding-left: 10px; margin-top: 15px;">
+<div style="padding: 10px; margin-top: 10px;">
+    <div class="d-flex flex-row-reverse" style="padding: 10px;">
+        <a href="/wiki/new/">
+            <button type="button" class="btn btn-outline-primary" style="margin-left: 5px;">Add new topic</button>
+
+        </a>
+        <a href="/wiki/random/">
+            <button type="button" class="btn btn-outline-primary" style="margin-right: 5px;">Random topic</button>
+
+        </a>
+    </div>
     <div style="display: flex;">
-        <a style="padding: 20px;">List of all the topics:</a>
-        <div class="btn-group" role="group" aria-label="Basic outlined example">
-            <button type="button" class="btn btn-outline-primary">Left</button>
-            <button type="button" class="btn btn-outline-primary">Middle</button>
-          </div>
-        <!-- <div>
-            <a href="/wiki/new/">
-                <input type="button" value="New topic"></input>
-            </a>
-        </div> -->
+        <h2 style="margin: 20px;">{{ description }}</h2>
     </div>
     <div class="list-group">
+        {% if entries %}
         {% for entry in entries %}
-            <a href="/wiki/{{ entry }}" class="list-group-item list-group-item-action">{{ entry }}</a>
+            <a href="/wiki/{{ entry }}" class="list-group-item list-group-item-action" style="margin-top: 10px;">{{ entry }}</a>
         {% endfor %}
-    </ul>
+        {% else %}
+        <div class="position-absolute top-50 start-50 translate-middle">
+            <h2 class="center">No entry found</h2>
+        </div>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}

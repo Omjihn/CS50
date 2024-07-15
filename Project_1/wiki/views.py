@@ -20,6 +20,7 @@ def index(request):
 
     entries = list_entries()
     return render(request, "wiki/index.html", {
+        "description": "List of all the indexes:",
         'entries': entries,
         'title' : ""
     })
@@ -44,7 +45,8 @@ def page(request, name):
         htmlContent = markdowner.convert(content)
         return render(request, "wiki/displayMdPage.html", {
                 "content": htmlContent,
-                "name": name
+                "name": name,
+                "title": name + " - "
             })
 
 def editPage(request, name):
@@ -59,7 +61,8 @@ def editPage(request, name):
         })
     return render(request, "wiki/editPage.html", {
             "content": content,
-            "name": name
+            "name": name,
+            "title": "Edit " + name + " - "
         })
 
 def newPage(request):
@@ -67,7 +70,9 @@ def newPage(request):
     Displays a POST form allow creating a new entry
     """
     if request.method == "GET":
-        return (render(request, "wiki/newPage.html"))
+        return (render(request, "wiki/newPage.html", {
+            "title": "New Topic - "
+        }))
     elif request.method == "POST":
         f = get_entry(request.POST['name'])
         if f != None:
@@ -100,8 +105,9 @@ def searchIndex(request):
                 return redirect(f"/wiki/{entry}/") 
             elif search_term.lower() in entry.lower():
                     toReturn.append(entry)
-    return render(request, 'wiki/searchIndex.html', {
-    'entries': toReturn,
-    'search': request.POST['search']
+    return render(request, 'wiki/index.html', {
+        "description": "Results for the search '" + request.POST['search'] + "':",
+        'entries': toReturn,
+        'title': "Search - "
     })
     
