@@ -11,6 +11,8 @@ That's why we have dynamic websites.
 
 This allows us to add backend code to a website. In this project, I used Django, which is a Python framework.
 
+You can find the subject with all the guidelines [here](https://cs50.harvard.edu/web/2020/projects/1/wiki/)
+
 ## How to Start the Web Server
 
 First, you need to check if you have Python installed.
