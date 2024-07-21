@@ -2,7 +2,7 @@
 
 {% block body %}
 
-<h1>Login : </h1>
+<h1>Register : </h1>
 
 {% if messages %}
     <ul >
@@ -14,14 +14,12 @@
     </ul>
 {% endif %}
 
-<form action="{% url 'login' %}" method="post">
+<form action="{% url 'register' %}" method="post">
     {% csrf_token %}
     <input type="text" name="username" placeholder="Username" required >
-    <input type="password" name="password", placeholder="Password" required >
-    <input type="submit" value="Login"  >
-    <a href="{% url 'register' %}">
-        <input type="button" value="Register">
-    </a>
+    <input type="password" name="password1", placeholder="Password" required >
+    <input type="password" name="password2", placeholder="Confirm Password" required >
+    <input type="submit" value="Register"  >
 </form>
 
 {% endblock %}

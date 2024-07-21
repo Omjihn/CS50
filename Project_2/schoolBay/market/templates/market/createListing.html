@@ -1,0 +1,26 @@
+{% extends "market/marketTemplate.html" %}
+
+{% block body %}
+
+<h1>Hello {{ user }}</h1>
+
+{% if messages %}
+    <ul >
+        {% for message in messages %}
+            <li>
+                {{ message }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<form action="{% url 'addListing' %}" method="post" >
+    {% csrf_token %}
+    <input type="text" name="title" placeholder="Title" required >
+    <input type="number" name="starting_price" placeholder="Price" required >
+    <input type="text" name="description" placeholder="Description" required >
+    <input type="submit" value="Create listing">
+
+</form>
+
+{% endblock %}

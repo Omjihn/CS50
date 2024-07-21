@@ -1,0 +1,14 @@
+{% extends "market/marketTemplate.html" %}
+
+{% block body %}
+
+<h1>Hello {{ user }}</h1>
+<h2>{{listing.title }} :</h2>
+
+    <h3>{{ listing.description }}</h3>
+    <h6>by {{ listing.user.username }}</h6>
+    <h4>{{ listing.starting_price }}€</h4>
+
+
+
+{% endblock %}
