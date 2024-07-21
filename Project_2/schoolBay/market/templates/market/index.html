@@ -12,8 +12,5 @@
     <h6>by {{ listing.user.username }}</h6>
     <h4>{{ listing.description }}</h4>
 {% endfor %}
-<a href="{% url 'addListing' %}">
-    <input type="button" value="add listing" >
-</a>
 
 {% endblock %}

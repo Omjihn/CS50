@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.contrib import messages
+from django.contrib.auth.models import User
 
 from .models import Comment, Listing, Bid
 
@@ -42,9 +43,7 @@ def addListing(request):
             })
 
         listing = Listing(title=title, user=user, description=description, starting_price=starting_price)
-
         listing.save()
-
         return redirect(f"/listing/{listing.id}/")
 
     return render(request, 'market/createListing.html', {
@@ -53,7 +52,19 @@ def addListing(request):
 
 def showListing(request, id):
     listing = get_object_or_404(Listing, id=id)
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            comment = request.POST['comment']
+            if len(comment.strip()) != 0:
+                comment = Comment(user=request.user, listing=listing, content=comment)
+                comment.save()
+            else:
+                messages.error(request, 'Error you comment musn\'t contain only whitespaces.')
+                return HttpResponseRedirect(reverse('showListing', args=[id]))
+
+
     return render(request, "market/showListing.html" , {
         'listing' : listing,
+        'comments': listing.comment.all(),
         'title' : listing.title + " - SchoolBay"
     })
