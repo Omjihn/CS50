@@ -40,7 +40,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse("user"))
+            return HttpResponseRedirect(reverse("index"))
         else:
             messages.warning(request, 'Invalid login or password.')
             return render(request, "login/loginForm.html", {

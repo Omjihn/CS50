@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Comment, Bid, Listing
+from .models import Comment, Bid, Listing, Watchlist
 
 # Register your models here.
 
@@ -29,6 +29,16 @@ class CommentAdmin(admin.ModelAdmin):
     def listing_title(self, obj):
         return obj.listing.title
 
+class WatchlistAdmin(admin.ModelAdmin):
+    list_display = ('listing_title', 'user', 'creation_date')
+    search_fields = ('listing_title', 'user')
+    ordering = ('-creation_date',)
+    fields = ('user', 'listing')
+
+    def listing_title(self, obj):
+        return obj.listing.title
+
 admin.site.register(Listing, ListingAdmin)
 admin.site.register(Bid, BidAdmin)
 admin.site.register(Comment, CommentAdmin)
+admin.site.register(Watchlist, WatchlistAdmin)

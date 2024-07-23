@@ -1,0 +1,33 @@
+{% extends "market/marketTemplate.html" %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <h1>Place Your Bid for {{ listing.title }}</h1>
+
+    {% if messages %}
+        <div class="alert alert-info">
+            <ul class="mb-0">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    <form action="./" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" name="price" id="price" class="form-control" placeholder="Enter your bid price" min="{{ listing.current_price }}" step="0.01" required>
+            <small class="form-text text-muted">Minimum bid is {{ listing.current_price }}€.</small>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" name="description" id="description" class="form-control" placeholder="Enter a comment" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Bid</button>
+    </form>
+</div>
+
+{% endblock %}

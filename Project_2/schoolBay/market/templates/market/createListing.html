@@ -1,26 +1,63 @@
 {% extends "market/marketTemplate.html" %}
 
 {% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Create Listing</h2>
+                </div>
+                <div class="card-body">
+                    {% if messages %}
+                        <div class="alert alert-warning" role="alert">
+                            <ul class="mb-0">
+                                {% for message in messages %}
+                                    <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
 
-<h1>Hello {{ user }}</h1>
-
-{% if messages %}
-    <ul >
-        {% for message in messages %}
-            <li>
-                {{ message }}
-            </li>
-        {% endfor %}
-    </ul>
-{% endif %}
-
-<form action="{% url 'addListing' %}" method="post" >
-    {% csrf_token %}
-    <input type="text" name="title" placeholder="Title" required >
-    <input type="number" name="starting_price" placeholder="Price" required >
-    <input type="text" name="description" placeholder="Description" required >
-    <input type="submit" value="Create listing">
-
-</form>
-
+                    <form action="{% url 'addListing' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" name="title" id="title" class="form-control" placeholder="Title" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="starting_price" class="form-label">Starting Price</label>
+                            <input type="number" name="starting_price" id="starting_price" class="form-control" placeholder="Price" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <input type="text" name="description" id="description" class="form-control" placeholder="Description" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="level" class="form-label">Educational Level</label>
+                            <select name="level" id="level" class="form-select" required>
+                                <option value="">Select an educational level</option>
+                                <option value="PRE">Preschool</option>
+                                <option value="ES">Elementary School</option>
+                                <option value="MS">Middle School</option>
+                                <option value="HS">High School</option>
+                                <option value="COL">College</option>
+                                <option value="UN">University</option>
+                                <option value="GS">Graduate School</option>
+                                <option value="DOC">Doctorate</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="picture" class="form-label">Upload Picture</label>
+                            <input type="file" name="picture" id="picture" class="form-control">
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Create Listing</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
