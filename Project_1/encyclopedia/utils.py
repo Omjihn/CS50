@@ -10,7 +10,7 @@ def list_entries():
     Returns a list of all names of encyclopedia entries.
     """
 
-    entries_dir = os.path.join(os.path.dirname(__file__), 'entries')
+    entries_dir = os.path.join(os.path.dirname(__file__), '../entries')
     if not default_storage.exists(entries_dir):
         return []
     
@@ -22,7 +22,7 @@ def get_random_entry():
     Returns a random name of an encyclopedia entry.
     """
 
-    entries_dir = os.path.join(os.path.dirname(__file__), 'entries')
+    entries_dir = os.path.join(os.path.dirname(__file__), '../entries')
     
     if not default_storage.exists(entries_dir):
         return None
@@ -39,7 +39,7 @@ def modif_file(filename, content):
     Modify a entry file passing this name and it's new content
     """
 
-    entries_dir = os.path.join(os.path.dirname(__file__), 'entries')
+    entries_dir = os.path.join(os.path.dirname(__file__), '../entries')
     filepath = os.path.join(entries_dir, f"{filename}.md")
     with default_storage.open(filepath, 'w') as file:
         file.truncate(0)
@@ -51,7 +51,7 @@ def get_entry(entry_name):
     Retrieves the content of a specific encyclopedia entry by name.
     """
 
-    entry_path = os.path.join(os.path.dirname(__file__), 'entries', f'{entry_name}.md')
+    entry_path = os.path.join(os.path.dirname(__file__), '../entries', f'{entry_name}.md')
     if not default_storage.exists(entry_path):
         return None
     with default_storage.open(entry_path, 'r') as file:
@@ -64,7 +64,7 @@ def create_entry(filename, content):
     Creates a new encyclopedia entry with the given filename and content.
     The file will be saved as a .md file.
     """
-    entries_dir = os.path.join(os.path.dirname(__file__), 'entries')
+    entries_dir = os.path.join(os.path.dirname(__file__), '../entries')
     
     if not default_storage.exists(entries_dir):
         default_storage.makedirs(entries_dir)
