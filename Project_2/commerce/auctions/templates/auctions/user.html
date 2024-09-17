@@ -1,0 +1,12 @@
+{% extends "auctions/loginTemplate.html" %}
+
+{% block body %}
+
+
+    <h2>Hello {{ request.user.username }} !</h2>
+
+    <a href="/user/logout/">
+        <button >Logout</button>
+    </a>
+
+{% endblock %}

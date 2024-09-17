@@ -1,0 +1,44 @@
+{% extends "auctions/marketTemplate.html" %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Select School Level</h2>
+    <form action="{% url 'index' %}" method="get">
+        <input type="hidden" id="school_level" name="school_level" value="">
+        <div class="row g-3">
+            <div class="col-6 col-md-4">
+                <button type="submit" class="btn btn-primary w-100" onclick="setSchoolLevel('PRE')">Preschool</button>
+            </div>
+            <div class="col-6 col-md-4">
+                <button type="submit" class="btn btn-primary w-100" onclick="setSchoolLevel('ES')">Elementary School</button>
+            </div>
+            <div class="col-6 col-md-4">
+                <button type="submit" class="btn btn-primary w-100" onclick="setSchoolLevel('MS')">Middle School</button>
+            </div>
+            <div class="col-6 col-md-4">
+                <button type="submit" class="btn btn-primary w-100" onclick="setSchoolLevel('HS')">High School</button>
+            </div>
+            <div class="col-6 col-md-4">
+                <button type="submit" class="btn btn-primary w-100" onclick="setSchoolLevel('COL')">College</button>
+            </div>
+            <div class="col-6 col-md-4">
+                <button type="submit" class="btn btn-primary w-100" onclick="setSchoolLevel('UN')">University</button>
+            </div>
+            <div class="col-6 col-md-4">
+                <button type="submit" class="btn btn-primary w-100" onclick="setSchoolLevel('GS')">Graduate School</button>
+            </div>
+            <div class="col-6 col-md-4">
+                <button type="submit" class="btn btn-primary w-100" onclick="setSchoolLevel('DOC')">Doctorate</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    function setSchoolLevel(level) {
+        document.getElementById('school_level').value = level;
+    }
+</script>
+
+{% endblock %}
