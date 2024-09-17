@@ -31,13 +31,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 SECRET_KEY = 'django-insecure-kwtkg3(9-0qka_bf8*o75hp@97p5@xj2_pqv32^50bc+wp*0z1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-
-CSRF_TRUSTED_ORIGINS = [
-    'https://f03f-46-193-69-65.ngrok-free.app',
-]
 
 # Application definition
 
