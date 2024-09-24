@@ -1,31 +1,26 @@
 
 # Online market website
 
-Previous exercise was fun but creating files to manage the data is kind of boring.
-
-That's why we have databases, and guess what Django can handle SQL.
+The previous exercise was fun but creating files to manage the data is kind of boring.
+That's why we have databases, and guess what ? Django can handle SQL for us.
 
 ## Django Model Creation
 
-It's just a class who inherit model Django built-in class.
+In Django, a model is just a class that inherits from Django's built-in `Model` class. Models will be defined in the [models.py](/Project_2/auctions/models.py) file.
 
-Models will be added in the [models.py](/Project_2/auctions/models.py) file.
-
-In this class you can define everything you need for example, in order to create a user model I will add a username, e-mail and a password.
+In this class, you can define all the fields you need. For example, to create a user model, you would define fields like `username`, `email`, and `password`.
   
-Pretty simple right ?
+Pretty simple, right ?
   
-Huummm not that much, in fact SQL have precise types and options for most of them, see the doc [here](https://docs.djangoproject.com/en/5.1/ref/models/fields/#model-field-types).
+Huummm, not entirely, SQL has specific types and options for most fields. You can learn more about them in the doc [here](https://docs.djangoproject.com/en/5.1/ref/models/fields/#model-field-types).
 
-In all those types there is the foreign key, this one is like a pointer to another existing model.
-
-For example if I have a comment fuctionality on my website, I add the foreign key to it and each times a user add one, the user will be linked to it's comment.
+One important field type is the **foreign key**, which acts as a pointer to another model. For instance, if your website has a comment feature, you can add a foreign key to the comment model. Each time a user adds a comment, the user will be linked to that comment via the foreign key.
 
 ## How To Fill My DB Now ?
 
-Thanks to Django no need to learn SQL syntax.
+Thanks to Django no need to learn SQL syntax. Since our models are just Python classes, you simply need to instantiate them and call the `.save()` method.
 
-Since our models are python classes, we just need to initialize them and just call `.save()` (This is a basic example please use built-in Django user, and do not save passwords like this) :
+Here's a basic example (please note: use Django's built-in user model, and don't save passwords like this in production):
 
 ```py
 newUser = User(username='bgdu28', password='noleak')
@@ -34,9 +29,9 @@ newUser.save()
 
 ## Access Data In My DB
 
-Each DB research can return 0, 1 or more items, you can order them by creation date for example.
+Database queries can return 0, 1, or more items. You can also sort them, for example, by creation date.
 
-For example if I want to find every user with the username Kevin:
+For instance, to find all users with the username "Kevin", you can use the following query:
 
 ```py
 Users = User.objects.filter(username='Kevin')
@@ -44,7 +39,7 @@ Users = User.objects.filter(username='Kevin')
 
 ## Start The Web Server
 
-More infos in this [README.md](Project_1/#how-to-start-the-web-server)
+For more information, check out this [README.md](Project_1/#how-to-start-the-web-server)
 
 ```sh
 > python3 manage.py runserver
@@ -52,14 +47,12 @@ More infos in this [README.md](Project_1/#how-to-start-the-web-server)
 
 ## See and Modify DB With Django Admin Panel
 
-First you need to define what should be displayed in the admin panel in the [admin.py](Project_2/auctions/admin.py) file.
+First, you need to specify what should be displayed in the admin panel. This is done in the [admin.py](Project_2/auctions/admin.py) file.
 
-Then you can create an Django admin user with this command :
+Next, you can create a Django admin user with the following command:
 
 ```sh
 > python3 manage.py createsuperuser
 ```
 
-After this you can start the server, and access `localhost:8000/admin` in your web browser.
-
-Just login and you should see all your models and be able to create, modify, and delete them.
+After this, start the server and go to `localhost:8000/admin` in your web browser. Log in with your admin credentials, and you will be able to view, create, modify, and delete all your models.
