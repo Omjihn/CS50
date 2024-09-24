@@ -39,7 +39,7 @@ Users = User.objects.filter(username='Kevin')
 
 ## Start The Web Server
 
-For more information, check out this [README.md](Project_1/#how-to-start-the-web-server)
+For more information, check out this [README.md](/Project_1/#how-to-start-the-web-server)
 
 ```sh
 > python3 manage.py runserver
