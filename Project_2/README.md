@@ -20,10 +20,10 @@ One important field type is the **foreign key**, which acts as a pointer to anot
 
 Thanks to Django no need to learn SQL syntax. Since our models are just Python classes, you simply need to instantiate them and call the `.save()` method.
 
-Here's a basic example (please note: use Django's built-in user model, and don't save passwords like this in production):
+Here's a basic example, using Django built-in user model :
 
 ```py
-newUser = User(username='bgdu28', password='noleak')
+newUser = User.objects.create_user(username, email, password)
 newUser.save()
 ```
 
